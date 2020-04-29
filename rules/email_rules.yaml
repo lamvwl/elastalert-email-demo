@@ -1,0 +1,22 @@
+name: 500 Errors above 10 per minute
+type: frequency
+index: filebeat
+is_enabled: true
+# buffer_time:
+#   minutes: 5
+run_every:
+  minutes: 1
+
+num_events: 10
+
+timeframe:
+  minutes: 1
+filter:
+- query:
+    query_string:
+      query: "message: 500"
+alert_subject: "Error spike: 500"
+alert:
+- "email"
+email:
+- "elk_dev_hal@gmail.com"
