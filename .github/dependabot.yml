@@ -1,0 +1,29 @@
+version: 2
+updates:
+- package-ecosystem: pip
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: twilio
+    versions:
+    - 6.51.1
+    - 6.52.0
+    - 6.53.0
+    - 6.54.0
+    - 6.55.0
+    - 6.56.0
+  - dependency-name: elasticsearch
+    versions:
+    - 7.10.1
+    - 7.11.0
+    - 7.12.0
+  - dependency-name: pylint
+    versions:
+    - 2.6.0
+    - 2.7.0
+  - dependency-name: coverage
+    versions:
+    - "5.4"
